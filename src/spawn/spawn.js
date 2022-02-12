@@ -1,6 +1,6 @@
 /* global BigInt */
 
-import { generateWitness } from "./generate_witness";
+import { generateWitness } from "./generate_witness.js";
 import { groth16 } from "snarkjs";
 
 function unstringifyBigInts(o) {
