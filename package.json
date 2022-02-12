@@ -2,7 +2,7 @@
   "name": "Dark forest",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kousikr26.github.io/",
+  "homepage": "https://kousikr26.github.io/darkforest-ui",
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@darkforest_eth/hashing": "^6.6.7",
