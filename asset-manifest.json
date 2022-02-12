@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/darkforest-ui/static/css/main.168b9214.css",
+    "main.js": "/darkforest-ui/static/js/main.d89df2ff.js",
+    "static/js/787.4490acf7.chunk.js": "/darkforest-ui/static/js/787.4490acf7.chunk.js",
+    "static/media/planet4.png": "/darkforest-ui/static/media/planet4.f128f5b8d15ccb2795cf.png",
+    "static/media/planet1.png": "/darkforest-ui/static/media/planet1.2b62d6d2eb9b71546151.png",
+    "static/media/planet3.png": "/darkforest-ui/static/media/planet3.b38aa9db2658da4d32d1.png",
+    "static/media/planet2.png": "/darkforest-ui/static/media/planet2.835418a674a8c649c66a.png",
+    "static/media/planet0.png": "/darkforest-ui/static/media/planet0.19adb7100e3d2497ef16.png",
+    "index.html": "/darkforest-ui/index.html",
+    "main.168b9214.css.map": "/darkforest-ui/static/css/main.168b9214.css.map",
+    "main.d89df2ff.js.map": "/darkforest-ui/static/js/main.d89df2ff.js.map",
+    "787.4490acf7.chunk.js.map": "/darkforest-ui/static/js/787.4490acf7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.168b9214.css",
+    "static/js/main.d89df2ff.js"
+  ]
+}
