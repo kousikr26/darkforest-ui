@@ -1,76 +1,76 @@
 /* global BigInt */
-module.exports = async function builder(code, options) {
+// module.exports = async function builder(code, options) {
 
-    options = options || {};
+//     options = options || {};
 
-    const wasmModule = await WebAssembly.compile(code);
+//     const wasmModule = await WebAssembly.compile(code);
 
-    let wc;
-
-    
-    const instance = await WebAssembly.instantiate(wasmModule, {
-        runtime: {
-            exceptionHandler : function(code) {
-                let errStr;
-                if (code == 1) {
-                    errStr= "Signal not found. ";
-                } else if (code == 2) {
-                    errStr= "Too many signals set. ";
-                } else if (code == 3) {
-                    errStr= "Signal already set. ";
-		} else if (code == 4) {
-                    errStr= "Assert Failed. ";
-		} else if (code == 5) {
-                    errStr= "Not enough memory. ";
-		} else {
-		    errStr= "Unknown error\n";
-                }
-		// get error message from wasm
-		errStr += getMessage();
-                throw new Error(errStr);
-            },
-	    showSharedRWMemory: function() {
-		printSharedRWMemory ();
-            }
-
-        }
-    });
-
-    const sanityCheck =
-        options
-//        options &&
-//        (
-//            options.sanityCheck ||
-//            options.logGetSignal ||
-//            options.logSetSignal ||
-//            options.logStartComponent ||
-//            options.logFinishComponent
-//        );
+//     let wc;
 
     
-    wc = new WitnessCalculator(instance, sanityCheck);
-    return wc;
+//     const instance = await WebAssembly.instantiate(wasmModule, {
+//         runtime: {
+//             exceptionHandler : function(code) {
+//                 let errStr;
+//                 if (code == 1) {
+//                     errStr= "Signal not found. ";
+//                 } else if (code == 2) {
+//                     errStr= "Too many signals set. ";
+//                 } else if (code == 3) {
+//                     errStr= "Signal already set. ";
+// 		} else if (code == 4) {
+//                     errStr= "Assert Failed. ";
+// 		} else if (code == 5) {
+//                     errStr= "Not enough memory. ";
+// 		} else {
+// 		    errStr= "Unknown error\n";
+//                 }
+// 		// get error message from wasm
+// 		errStr += getMessage();
+//                 throw new Error(errStr);
+//             },
+// 	    showSharedRWMemory: function() {
+// 		printSharedRWMemory ();
+//             }
 
-    function getMessage() {
-        var message = "";
-	var c = instance.exports.getMessageChar();
-        while ( c != 0 ) {
-	    message += String.fromCharCode(c);
-	    c = instance.exports.getMessageChar();
-	}
-        return message;
-    }
+//         }
+//     });
+
+//     const sanityCheck =
+//         options
+// //        options &&
+// //        (
+// //            options.sanityCheck ||
+// //            options.logGetSignal ||
+// //            options.logSetSignal ||
+// //            options.logStartComponent ||
+// //            options.logFinishComponent
+// //        );
+
+    
+//     wc = new WitnessCalculator(instance, sanityCheck);
+//     return wc;
+
+//     function getMessage() {
+//         var message = "";
+// 	var c = instance.exports.getMessageChar();
+//         while ( c != 0 ) {
+// 	    message += String.fromCharCode(c);
+// 	    c = instance.exports.getMessageChar();
+// 	}
+//         return message;
+//     }
 	
-    function printSharedRWMemory () {
-	const shared_rw_memory_size = instance.exports.getFieldNumLen32();
-	const arr = new Uint32Array(shared_rw_memory_size);
-	for (let j=0; j<shared_rw_memory_size; j++) {
-	    arr[shared_rw_memory_size-1-j] = instance.exports.readSharedRWMemory(j);
-	}
-	console.log(fromArray32(arr));
-    }
+//     function printSharedRWMemory () {
+// 	const shared_rw_memory_size = instance.exports.getFieldNumLen32();
+// 	const arr = new Uint32Array(shared_rw_memory_size);
+// 	for (let j=0; j<shared_rw_memory_size; j++) {
+// 	    arr[shared_rw_memory_size-1-j] = instance.exports.readSharedRWMemory(j);
+// 	}
+// 	console.log(fromArray32(arr));
+//     }
 
-};
+// };
 
 class WitnessCalculator {
     constructor(instance, sanityCheck) {
