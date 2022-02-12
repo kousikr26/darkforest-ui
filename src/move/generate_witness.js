@@ -1,4 +1,5 @@
-const wc = require("./witness_calculator.js");
+// const wc = require("./witness_calculator.js");
+import { builder as wc } from "./witness_calculator.js";
 //const { readFileSync } = require("fs");
 
 export default async function generateWitness(input) {
