@@ -1,7 +1,7 @@
 const wc = require("./witness_calculator.js");
 //const { readFileSync } = require("fs");
 
-module.exports.generateWitness = async function (input) {
+export default async function generateWitness(input) {
 	const response = await fetch('spawn.wasm');
 	const buffer = await response.arrayBuffer();
 	//console.log(buffer);
