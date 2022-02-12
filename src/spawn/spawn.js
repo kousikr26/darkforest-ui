@@ -2,7 +2,7 @@
 
 // import { generateWitness } from "./generate_witness.js";
 import { groth16 } from "snarkjs";
-const generateWitness = require("./generate_witness.js");
+import generateWitness from "./generate_witness.js";
 
 function unstringifyBigInts(o) {
     if ((typeof(o) == "string") && (/^[0-9]+$/.test(o) ))  {
