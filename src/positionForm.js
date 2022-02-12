@@ -40,7 +40,7 @@ class PositionForm extends React.Component {
         connectDarkForest();
         super(props);
         this.state = { curX: JSON.parse(localStorage.getItem('curX')) || '', curY:JSON.parse(localStorage.getItem('curY')) || '',
-                        x: '', y: '', resource:'',
+                        x: '', y: '', resource:'0',
                         txnList:JSON.parse(localStorage.getItem('txnList')) || [],
                         showCard: false, planetimgLoc:0, moveloading:false,
                         collectedResources:JSON.parse(localStorage.getItem('collectedResources')) || 0, leaderboard:[]};
