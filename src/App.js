@@ -17,7 +17,7 @@ var planet4 = require('./assets/planet4.png');
 
 
 function App() {
-  const chainID = 1666700000; 
+  const chainID = 1666600000; 
 
   const [currentAccount, setCurrentAccount] = useState(null);
   const [correctChain, setCorrectChain] = useState(null);
