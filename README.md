@@ -1,15 +1,5 @@
-# Basic Sample Hardhat Project
+# darkforest-ui
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+Frontend built on reactjs that uses snarkjs to generate zero knowledge proofs for dark forest.
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+Deployed at https://kousikr26.github.io/darkforest-ui/
